@@ -1,2 +1,1 @@
-# react-temp-ts
-react-temp typescript
+# create-react-app-ts
