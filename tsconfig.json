@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    // baseUrl paths，webpack alias才能生效
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"],
+    },
+    // import React, { Component } from 'react' 不报错
+    "allowSyntheticDefaultImports": true,
+    // 打开后 引入任何未声明类型的文件 都会提示红线
+    // "noImplicitAny": true,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

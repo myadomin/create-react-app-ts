@@ -5,7 +5,7 @@ const resolve = (relatedPath) => path.resolve(__dirname, relatedPath)
 
 const webpackConfigBase = {
   entry: {
-    main: resolve('../src/main.js')
+    main: resolve('../src/main.tsx')
   },
   output: {
     path: resolve('../dist')
@@ -43,7 +43,7 @@ const webpackConfigBase = {
     }
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
       '@src': resolve('../src')
     }
@@ -51,6 +51,22 @@ const webpackConfigBase = {
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.ts[x]?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-react',
+            '@babel/preset-typescript'
+          ]
+          // plugins: [
+          //   ['import', { libraryName: 'antd', style: 'css' }]
+          // ]
+        }
+      },
+      { enforce: 'pre', test: /\.js$/, use: ['source-map-loader'] },
       {
         test: /\.js$/,
         include: [resolve('../src')],

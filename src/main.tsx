@@ -1,7 +1,9 @@
 // babel转换es6方法
-import 'babel-polyfill'
+// import '@babel/polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
+// import * as React from "react";
+// import * as ReactDOM from "react-dom";
 import App from '@src/view/app'
 import '@src/style/base.css'
 import { ConfigProvider } from 'antd'
@@ -13,7 +15,7 @@ import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import reducer from '@src/store'
 // 打开 mock数据，关闭 请求服务器数据
-import mock from '@src/mock'
+// import mock from '@src/mock'
 
 const middleware = [ thunk ]
 if (process.env.NODE_ENV !== 'production') {
@@ -35,3 +37,9 @@ ReactDOM.render(
   </ConfigProvider>,
   document.getElementById('root')
 )
+
+// import { TsTest } from '@src/view/ts/test'
+// ReactDOM.render(
+//   <TsTest compiler="asdf" framework="sfsdf" />,
+//   document.getElementById('root')
+// )
